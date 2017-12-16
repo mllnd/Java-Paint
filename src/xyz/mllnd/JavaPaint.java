@@ -3,6 +3,7 @@ package xyz.mllnd;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
+import xyz.mllnd.PaintedObject;
 
 public class JavaPaint extends Applet implements MouseListener, MouseMotionListener {
     public static void main(String[] args) {
