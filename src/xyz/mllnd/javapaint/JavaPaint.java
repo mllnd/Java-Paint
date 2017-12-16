@@ -1,11 +1,10 @@
-package xyz.mllnd;
+package xyz.mllnd.javapaint;
 
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Line2D;
 import java.util.Vector;
-import xyz.mllnd.PaintedObject;
 
 public class JavaPaint extends Applet implements MouseListener, MouseMotionListener {
 

@@ -1,4 +1,4 @@
-package xyz.mllnd;
+package xyz.mllnd.javapaint;
 
 import java.awt.*;
 import java.util.Vector;
