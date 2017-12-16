@@ -1,6 +1,7 @@
 # java-paint
 
 A personal project for Java Fundamentals course @ TTÜ.
+
 This project is a Java approach to MS Paint using vectors and points for drawing objects.
 
 ## Usage
