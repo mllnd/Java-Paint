@@ -1,11 +1,10 @@
 package xyz.mllnd;
 
+import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
-public class JavaPaint {
+public class JavaPaint extends Applet implements MouseListener, MouseMotionListener {
     public static void main(String[] args) {
         Frame frame = new Frame();
         // Get screen dimensions
@@ -27,5 +26,5 @@ public class JavaPaint {
     public void mouseEntered(MouseEvent e) {}
     public void mouseExited(MouseEvent e) {}
     public void mouseMoved(MouseEvent e) {}
-    
+
 }
