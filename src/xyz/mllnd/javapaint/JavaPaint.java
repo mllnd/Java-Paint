@@ -6,7 +6,7 @@ import java.awt.event.*;
 import java.awt.geom.Line2D;
 import java.util.Vector;
 
-public class JavaPaint extends Applet implements MouseListener, MouseMotionListener, ActionListener {
+public class JavaPaint extends Applet implements MouseListener, MouseMotionListener {
 
     /**
      * Add listeners and buttons to the frame
@@ -14,16 +14,16 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
     JavaPaint() {
         addMouseListener(this);
         addMouseMotionListener(this);
-        buttonAdder("Black", "black");
-        buttonAdder("White", "white");
-        buttonAdder("Blue", "blue");
-        buttonAdder("Red", "red");
-        buttonAdder("Yellow", "yellow");
-        buttonAdder("Green", "green");
-        buttonAdder("Small", "small");
-        buttonAdder("Medium", "medium");
-        buttonAdder("Big", "big");
-        buttonAdder("Huge", "huge");
+        new PaintButton(this, "Black", "black");
+        new PaintButton(this, "White", "white");
+        new PaintButton(this, "Blue", "blue");
+        new PaintButton(this, "Red", "red");
+        new PaintButton(this, "Yellow", "yellow");
+        new PaintButton(this, "Green", "green");
+        new PaintButton(this, "Small", "small");
+        new PaintButton(this, "Medium", "medium");
+        new PaintButton(this, "Big", "big");
+        new PaintButton(this, "Huge", "huge");
     }
 
     /**
@@ -68,39 +68,6 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
                 System.exit(0);
             }
         });
-    }
-
-    /**
-     * Method for adding buttons to the frame
-     * @param label Button label text
-     * @param command The "command" which is behind a button
-     */
-    private void buttonAdder(String label, String command) {
-        Button btn = new Button(label);
-        btn.setActionCommand(command);
-        btn.addActionListener(this);
-        add(btn);
-    }
-
-    /**
-     * Button click listener, changes brush size and color
-     * @param e ActionEvent
-     */
-    public void actionPerformed(ActionEvent e) {
-        String colorCommands[] = {"black", "white", "blue", "red", "yellow", "green"};
-        Color colors[] = {Color.BLACK, Color.WHITE, Color.BLUE, Color.RED, Color.YELLOW, Color.GREEN};
-        for (int i=0; i<colorCommands.length; i++) {
-            if (colorCommands[i].equals(e.getActionCommand())) {
-                color = colors[i];
-            }
-        }
-        String sizeCommands[] = {"small", "medium", "big", "huge"};
-        int sizes[] = {1, 5, 10, 50};
-        for (int i=0; i<sizeCommands.length; i++) {
-            if (sizeCommands[i].equals(e.getActionCommand())) {
-                brushSize = sizes[i];
-            }
-        }
     }
 
     /**
