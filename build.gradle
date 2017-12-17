@@ -1,0 +1,50 @@
+// Gradle plugins
+plugins {
+    id 'java'
+    id 'org.zeroturnaround.gradle.jrebel' version '1.1.8'
+}
+
+sourceSets.main.java.srcDirs = ['src']
+
+group = properties.group
+version = properties.version
+description = properties.description
+
+// Java 8
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+// Project repositories
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+
+}
+
+// Project dependencies
+dependencies {
+    //
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": "xyz.mllnd.javapaint.JavaPaint")
+    }
+}
+
+// Wrapper task
+task wrapper(type: Wrapper) {
+    gradleVersion = gradle_version
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradle_version-all.zip"
+}
+
+// Enables use of JRebel. Add argument -PuseJRebel=true
+if(project.hasProperty('useJRebel') && Boolean.parseBoolean(project.getProperties().useJRebel as String))
+    jar.dependsOn generateRebel
+
+
+defaultTasks 'build'
