@@ -10,9 +10,9 @@ _tbc..._
 
 ## To-do
 
-- [ ] Utilize "drawing" status to immediately update frame
+- [x] Utilize "drawing" status to immediately update frame
 - [ ] A better OOP approach to overall structure
 - [ ] Add color and brush size options
-- [ ] Implement Gradle for building project
+- [x] Implement Gradle for building project
 - [ ] Implement Travis CI integration
 - [ ] Generate Javadocs

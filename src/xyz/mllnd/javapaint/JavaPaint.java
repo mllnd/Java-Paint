@@ -82,6 +82,16 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
                 lastpoint = currentpoint; // Set last point to current point
             }
         }
+        if (drawing && object.v.size() > 1) {
+            g2.setStroke(new BasicStroke(object.brushSize));
+            g2.setColor(object.color);
+            Point lastpoint = object.v.get(0);
+            for (int j=1; j<object.v.size(); j++) {
+                Point currentpoint = object.v.get(j);
+                g2.draw(new Line2D.Float(lastpoint.x, lastpoint.y, currentpoint.x, currentpoint.y));
+                lastpoint = currentpoint;
+            }
+        }
     }
 
 }
