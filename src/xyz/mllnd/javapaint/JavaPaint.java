@@ -8,6 +8,9 @@ import java.util.Vector;
 
 public class JavaPaint extends Applet implements MouseListener, MouseMotionListener, ActionListener {
 
+    /**
+     * Add listeners and buttons to the frame
+     */
     JavaPaint() {
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -23,15 +26,38 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
         buttonAdder("Huge", "huge");
     }
 
-    Vector<PaintObject> v = new Vector<PaintObject>(); // Full picture
-    private PaintObject object; // The object that is currently being drawn
-    boolean drawing = false; // Drawing status boolean
-    Color color = Color.BLACK; // Initial color
-    int brushSize = 1; // Initial brush size
+    /**
+     * The full "picture"
+     */
+    Vector<PaintObject> v = new Vector<PaintObject>();
 
+    /**
+     * A separate object, created on mousePressed event and "ended" on mouseReleased event
+     */
+    private PaintObject object;
+
+    /**
+     * Is user drawing currently?
+     */
+    boolean drawing = false;
+
+    /**
+     * Default color
+     */
+    Color color = Color.BLACK;
+
+    /**
+     * Default brush size
+     */
+    int brushSize = 1;
+
+
+    /**
+     * Main method, invoked on program start
+     * @param args Arguments passed to method
+     */
     public static void main(String[] args) {
         Frame frame = new Frame();
-        // Get screen dimensions
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setVisible(true);
         frame.setSize(dim.width, dim.height);
@@ -44,6 +70,11 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
         });
     }
 
+    /**
+     * Method for adding buttons to the frame
+     * @param label Button label text
+     * @param command The "command" which is behind a button
+     */
     private void buttonAdder(String label, String command) {
         Button btn = new Button(label);
         btn.setActionCommand(command);
@@ -51,6 +82,10 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
         add(btn);
     }
 
+    /**
+     * Button click listener, changes brush size and color
+     * @param e ActionEvent
+     */
     public void actionPerformed(ActionEvent e) {
         String colorCommands[] = {"black", "white", "blue", "red", "yellow", "green"};
         Color colors[] = {Color.BLACK, Color.WHITE, Color.BLUE, Color.RED, Color.YELLOW, Color.GREEN};
@@ -68,6 +103,10 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
         }
     }
 
+    /**
+     * Mouse pressed event listener
+     * @param e MouseEvent
+     */
     public void mousePressed(MouseEvent e) {
         switch (e.getButton()) {
             case 1:
@@ -80,6 +119,11 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
                 break;
         }
     }
+
+    /**
+     * Mouse released event listener
+     * @param e MouseEvent
+     */
     public void mouseReleased(MouseEvent e) {
         if (drawing) {
             drawing = false;
@@ -90,6 +134,11 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
             System.out.println("Stopping painting! There are "+object.v.size()+" points in the painted object.");
         }
     }
+
+    /**
+     * Mouse dragged event listener
+     * @param e MouseEvent
+     */
     public void mouseDragged(MouseEvent e) {
         if (drawing) {
             object.v.add(e.getPoint());
@@ -103,6 +152,10 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
     public void mouseExited(MouseEvent e) {}
     public void mouseMoved(MouseEvent e) {}
 
+    /**
+     * "Paints" the points on the frame
+     * @param g Graphics
+     */
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         for (int i=0; i<v.size(); i++) {
