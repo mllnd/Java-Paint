@@ -20,5 +20,10 @@ out/*
 # macOS
 .DS_Store
 
+
 # Gradle
-.gradle/*
+!gradle-wrapper.jar
+.gradle/
+build/
+*/build/
+
