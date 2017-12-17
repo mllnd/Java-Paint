@@ -14,5 +14,5 @@ _tbc..._
 - [ ] A better OOP approach to overall structure
 - [x] Add color and brush size options
 - [x] Implement Gradle for building project
-- [ ] Implement Travis CI integration
+- [x] Implement Travis CI integration
 - [ ] Generate Javadocs
