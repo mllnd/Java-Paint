@@ -1,13 +1,9 @@
-package xyz.mllnd.javapaint;
+package main.java.xyz.mllnd.javapaint.javapaint;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by markkus on 17/12/2017.
- */
 public class PaintButton extends Button implements ActionListener {
 
     public String label;

@@ -15,7 +15,7 @@ targetCompatibility = 1.8
 
 jar {
     manifest {
-        attributes("Main-Class": "xyz.mllnd.javapaint.JavaPaint")
+        attributes("Main-Class": "main.java.xyz.mllnd.javapaint.javapaint.JavaPaint")
     }
 }
 

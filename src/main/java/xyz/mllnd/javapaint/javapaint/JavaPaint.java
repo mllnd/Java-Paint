@@ -1,4 +1,4 @@
-package xyz.mllnd.javapaint;
+package main.java.xyz.mllnd.javapaint.javapaint;
 
 import java.applet.Applet;
 import java.awt.*;

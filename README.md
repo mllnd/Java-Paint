@@ -17,7 +17,7 @@ JavaDoc is viewable at https://mllnd.github.io/java-paint/
 ## To-do
 
 - [x] Utilize "drawing" status to immediately update frame
-- [ ] A better OOP approach to overall structure
+- [x] A better OOP approach to overall structure
 - [x] Add color and brush size options
 - [x] Implement Gradle for building project
 - [x] Implement Travis CI integration
