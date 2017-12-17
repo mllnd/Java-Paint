@@ -23,8 +23,8 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
         buttonAdder("Huge", "huge");
     }
 
-    Vector<PaintedObject> v = new Vector<PaintedObject>(); // Full picture
-    private PaintedObject object; // The object that is currently being drawn
+    Vector<PaintObject> v = new Vector<PaintObject>(); // Full picture
+    private PaintObject object; // The object that is currently being drawn
     boolean drawing = false; // Drawing status boolean
     Color color = Color.BLACK; // Initial color
     int brushSize = 1; // Initial brush size
@@ -71,7 +71,7 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
     public void mousePressed(MouseEvent e) {
         switch (e.getButton()) {
             case 1:
-                object = new PaintedObject(brushSize, color);
+                object = new PaintObject(brushSize, color);
                 drawing = true;
                 System.out.println("Starting painting!");
                 break;
@@ -106,7 +106,7 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         for (int i=0; i<v.size(); i++) {
-            PaintedObject m = v.get(i);
+            PaintObject m = v.get(i);
             g2.setStroke(new BasicStroke(m.brushSize));
             g2.setColor(m.color);
             Point lastpoint = m.v.get(0); // Last point
