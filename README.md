@@ -10,6 +10,10 @@ This project is a Java approach to MS Paint using vectors and points for drawing
 
 _tbc..._
 
+## Documentation
+
+JavaDoc is viewable at https://mllnd.github.io/java-paint/
+
 ## To-do
 
 - [x] Utilize "drawing" status to immediately update frame
@@ -17,4 +21,4 @@ _tbc..._
 - [x] Add color and brush size options
 - [x] Implement Gradle for building project
 - [x] Implement Travis CI integration
-- [ ] Generate Javadocs
+- [x] Generate JavaDoc
