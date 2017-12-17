@@ -1,5 +1,7 @@
 # java-paint
 
+[![Build Status](https://travis-ci.org/mllnd/java-paint.svg?branch=master)](https://travis-ci.org/mllnd/java-paint)
+
 A personal project for Java Fundamentals course @ TTÜ.
 
 This project is a Java approach to MS Paint using vectors and points for drawing objects.
