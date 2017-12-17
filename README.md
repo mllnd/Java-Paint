@@ -6,9 +6,15 @@ A personal project for Java Fundamentals course @ TTÜ.
 
 This project is a Java approach to MS Paint using vectors and points for drawing objects.
 
-## Usage
+## How do I run this thing?
 
-_tbc..._
+First things first - clone this repository with `git clone`.
+
+A very easy way to build this project is to run Gradle build task with `./gradlew` inside the project's root directory.
+
+The generated `.jar` artifact will be placed under `build/libs/` folder.
+
+You can run the `.jar` by using `java -jar` command or you could just open it as any other program.
 
 ## Documentation
 
