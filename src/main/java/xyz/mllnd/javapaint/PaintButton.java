@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PaintButton extends Button implements ActionListener {
+public final class PaintButton extends Button implements ActionListener {
 
     public String label;
     public String command;

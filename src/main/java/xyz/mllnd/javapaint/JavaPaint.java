@@ -63,8 +63,12 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
         frame.setSize(dim.width, dim.height);
         frame.add(new JavaPaint());
         frame.setLocation(0, 0);
+        System.out.println("Starting JavaPaint...");
+        System.out.println("Created by Markkus Olaf Millend IVSB12, 2017");
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent we) {
+                System.out.println("Thanks for trying out JavaPaint! Shutting down...");
+                System.out.println("Created by Markkus Olaf Millend IVSB12, 2017");
                 System.exit(0);
             }
         });

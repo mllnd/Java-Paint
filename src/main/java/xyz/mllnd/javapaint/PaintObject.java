@@ -3,7 +3,7 @@ package main.java.xyz.mllnd.javapaint;
 import java.awt.*;
 import java.util.Vector;
 
-public class PaintObject {
+public final class PaintObject {
 
     /**
      * The vector itself
