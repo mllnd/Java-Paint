@@ -89,6 +89,7 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
      * Mouse pressed event listener
      * @param e MouseEvent
      */
+    @Override
     public void mousePressed(MouseEvent e) {
         switch (e.getButton()) {
             case 1:
@@ -106,6 +107,7 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
      * Mouse released event listener
      * @param e MouseEvent
      */
+    @Override
     public void mouseReleased(MouseEvent e) {
         if (drawing) {
             drawing = false;
@@ -121,6 +123,7 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
      * Mouse dragged event listener
      * @param e MouseEvent
      */
+    @Override
     public void mouseDragged(MouseEvent e) {
         if (drawing) {
             object.v.add(e.getPoint());
@@ -129,15 +132,16 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
     }
 
     /* Unused listeners */
-    public void mouseClicked(MouseEvent e) {}
-    public void mouseEntered(MouseEvent e) {}
-    public void mouseExited(MouseEvent e) {}
-    public void mouseMoved(MouseEvent e) {}
+    @Override public void mouseClicked(MouseEvent e) {}
+    @Override public void mouseEntered(MouseEvent e) {}
+    @Override public void mouseExited(MouseEvent e) {}
+    @Override public void mouseMoved(MouseEvent e) {}
 
     /**
      * "Paints" the points on the frame
      * @param g Graphics
      */
+    @Override
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         for(PaintObject m : v) {

@@ -25,6 +25,7 @@ public final class PaintButton extends Button implements ActionListener {
      * Button click listener, changes brush size and color
      * @param e ActionEvent
      */
+    @Override
     public void actionPerformed(ActionEvent e) {
         String colorCommands[] = {"black", "white", "blue", "red", "yellow", "green"};
         Color colors[] = {Color.BLACK, Color.WHITE, Color.BLUE, Color.RED, Color.YELLOW, Color.GREEN};
