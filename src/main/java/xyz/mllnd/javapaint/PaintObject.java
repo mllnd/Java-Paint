@@ -1,6 +1,7 @@
 package xyz.mllnd.javapaint;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Point;
 import java.util.Vector;
 
 public final class PaintObject {
