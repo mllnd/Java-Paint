@@ -1,4 +1,4 @@
-package main.java.xyz.mllnd.javapaint;
+package xyz.mllnd.javapaint;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
