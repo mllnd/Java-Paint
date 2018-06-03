@@ -11,7 +11,24 @@ description = properties.description
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+configurations {
+    shadow
+
+    implementation.extendsFrom shadow
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    shadow("com.h2database:h2:1.4.197")
+}
+
 jar {
+    from { configurations.shadow.collect { it.isDirectory() ? it : zipTree(it) } }
+
     manifest {
         attributes("Main-Class": "xyz.mllnd.javapaint.JavaPaint")
     }
