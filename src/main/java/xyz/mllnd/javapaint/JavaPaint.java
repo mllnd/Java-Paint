@@ -17,7 +17,7 @@ import java.awt.event.WindowEvent;
 import java.awt.geom.Line2D;
 import java.util.Vector;
 
-public class JavaPaint extends Applet implements MouseListener, MouseMotionListener {
+public final class JavaPaint extends Applet implements MouseListener, MouseMotionListener {
 
     /**
      * Add listeners and buttons to the frame
