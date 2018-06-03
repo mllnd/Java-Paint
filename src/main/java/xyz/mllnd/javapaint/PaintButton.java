@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 
 public final class PaintButton extends Button implements ActionListener {
 
-    public String label;
-    public String command;
-    public JavaPaint javaPaint;
+    private final String label;
+    private final String command;
+    private final JavaPaint javaPaint;
 
     public PaintButton(JavaPaint javaPaint, String label, String command) {
         super(label);
