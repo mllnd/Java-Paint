@@ -9,7 +9,7 @@ public final class PaintObject {
     /**
      * The vector itself
      */
-    Vector<Point> v;
+    Vector<Point> v = new Vector<>();
 
     /**
      * Object brush size
@@ -22,7 +22,6 @@ public final class PaintObject {
     Color color;
 
     PaintObject(int brush, Color col) {
-        v = new Vector<Point>();
         brushSize = brush;
         color = col;
     }

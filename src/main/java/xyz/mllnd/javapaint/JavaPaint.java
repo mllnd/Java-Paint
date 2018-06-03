@@ -40,7 +40,7 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
     /**
      * The full "picture"
      */
-    Vector<PaintObject> v = new Vector<PaintObject>();
+    Vector<PaintObject> v = new Vector<>();
 
     /**
      * A separate object, created on mousePressed event and "ended" on mouseReleased event
@@ -140,12 +140,11 @@ public class JavaPaint extends Applet implements MouseListener, MouseMotionListe
      */
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        for (int i=0; i<v.size(); i++) {
-            PaintObject m = v.get(i);
+        for(PaintObject m : v) {
             g2.setStroke(new BasicStroke(m.brushSize));
             g2.setColor(m.color);
             Point lastpoint = m.v.get(0); // Last point
-            for (int j=1; j<m.v.size(); j++) {
+            for(int j = 1; j < m.v.size(); j++) {
                 Point currentpoint = m.v.get(j);
                 g2.draw(new Line2D.Float(lastpoint.x, lastpoint.y, currentpoint.x, currentpoint.y));
                 lastpoint = currentpoint; // Set last point to current point
